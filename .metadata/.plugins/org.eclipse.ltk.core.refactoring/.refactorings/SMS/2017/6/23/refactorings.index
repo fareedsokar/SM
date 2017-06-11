@@ -1,0 +1,31 @@
+1496554476452	Encapsulate field 'class_room'
+1496554494189	Encapsulate field 'Teacher_ID'
+1496554501666	Encapsulate field 'student_List'
+1496554762777	Encapsulate field 'Message_ID'
+1496554768536	Encapsulate field 'Message_Subject'
+1496554777733	Encapsulate field 'User_ID'
+1496554785343	Encapsulate field 'Message_Context'
+1496554791894	Encapsulate field 'Message_date'
+1496554800615	Encapsulate field 'Status'
+1496554890077	Encapsulate field 'Accepted'
+1496585923679	Delete element
+1496585936701	Delete element
+1496591324345	Delete element
+1496591683902	Delete element
+1496591706936	Move folder
+1496591716530	Delete element
+1496591880997	Delete element
+1496591891242	Delete element
+1496592066203	Delete element
+1496941508208	Encapsulate field 'Name'
+1496941519415	Encapsulate field 'Type'
+1496941643019	Encapsulate field 'tableNames'
+1496941695505	Encapsulate field 'tableTypes'
+1496991027743	Rename type 'ColumnSQL'
+1496991048002	Rename type 'OurSQL'
+1496991064551	Rename type 'OurSQLBuild'
+1496991082951	Rename package 'OurSQL'
+1496991287785	Encapsulate field 'Part1'
+1496991293329	Encapsulate field 'Part3'
+1496991302254	Encapsulate field 'Part2'
+1496991308577	Encapsulate field 'Qtype'
