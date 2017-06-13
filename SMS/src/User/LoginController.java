@@ -23,8 +23,8 @@ import javafx.stage.Stage;
 
 public class LoginController{// implements Initializable{
 
-	@FXML
-	private PasswordField txtpassword;
+	/*@FXML
+	private PasswordField txtpassword;*/
 	
 	public void start(Stage primaryStage) throws Exception {	
 		Parent root = FXMLLoader.load(getClass().getResource("/User/LoginFX.fxml"));
