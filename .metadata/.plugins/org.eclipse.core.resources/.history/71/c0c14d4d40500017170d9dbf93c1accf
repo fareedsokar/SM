@@ -1,0 +1,35 @@
+package OurDB;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class OurTable {
+	private HashMap<String,Integer> tableNames;
+	private HashMap<Integer,ArrayList<tableColumn>> tableTypes;
+	
+	public void setIndex(int index,String name,ArrayList<tableColumn> arr){
+		tableNames.put( name,index);
+		tableTypes.put(index, arr);
+	}
+	public int getIndexName(String name){
+		return tableNames.get(name);
+	}
+	public ArrayList<tableColumn> getindexArrayList(int index){
+		return tableTypes.get(index);
+	}
+	public HashMap<String,Integer> getTableNames() {
+		return tableNames;
+	}
+
+	public void setTableNames(HashMap<String,Integer> tableNames) {
+		this.tableNames = tableNames;
+	}
+
+	public HashMap<Integer,ArrayList<tableColumn>> getTableTypes() {
+		return tableTypes;
+	}
+
+	public void setTableTypes(HashMap<Integer,ArrayList<tableColumn>> tableTypes) {
+		this.tableTypes = tableTypes;
+	}
+}
