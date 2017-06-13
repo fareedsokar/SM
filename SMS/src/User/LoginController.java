@@ -15,11 +15,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
 public class LoginController{// implements Initializable{
 
+	@FXML
+	private PasswordField txtpassword;
+	
+	public void start(Stage primaryStage) throws Exception {	
+		Parent root = FXMLLoader.load(getClass().getResource("/User/LoginFX.fxml"));
+		Scene scene = new Scene(root);
+		//scene.getStylesheets().add(getClass().getResource("/User/LoginFX.css").toExternalForm());
+		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Login-icon.png")));
+		primaryStage.resizableProperty().setValue(Boolean.FALSE);
+		primaryStage.setTitle("Login Panel");
+		primaryStage.setScene(scene);
+		primaryStage.show();		
+	}
 	
 }
