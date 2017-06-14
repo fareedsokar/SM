@@ -1,7 +1,10 @@
 package server;
+import OurMessage.Message;
+import OurMessage.Response;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
 import OurMessage.Message;
 import ocsf.server.*;
@@ -101,6 +104,20 @@ public class Server extends AbstractServer {
 				  }
 				  //pstmt= conn.prepareStatement(((Message)msg).GetQuery());
 				  pstmt.executeUpdate();
+				  break;
+			  case 100:
+				  	Response r=new Response(Response.integer);
+				  	serv.display("Read Student ids Request.");
+	  				rs = stmt.executeQuery(((Message)msg).GetQuery());
+	  				while(rs.next()){
+	  					r.getLs().add(rs.getInt(1));
+	  				}
+	  				try {
+	  					client.sendToClient(r);
+	  				} catch (IOException e) {
+	  					// TODO Auto-generated catch block
+	  					e.printStackTrace();
+	  				}
 				  break;
 			  }
 		  } catch (SQLException e) 

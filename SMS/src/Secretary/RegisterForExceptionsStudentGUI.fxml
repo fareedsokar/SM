@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorRFES" prefHeight="204.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Secretary.RegisterForExceptionsStudentController">
+   <children>
+      <ComboBox fx:id="cmbstudent" layoutX="120.0" layoutY="85.0" prefWidth="150.0" />
+      <Label fx:id="lblstudent" layoutX="60.0" layoutY="89.0" text="Student" />
+      <Button fx:id="btnadd" layoutX="55.0" layoutY="129.0" mnemonicParsing="false" onAction="#registerStudent" prefHeight="25.0" prefWidth="92.0" text="Add" />
+      <Button fx:id="btncnacel" layoutX="172.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Cancel" />
+   </children>
+</AnchorPane>
