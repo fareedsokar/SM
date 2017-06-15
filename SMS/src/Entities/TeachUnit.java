@@ -3,9 +3,9 @@ package Entities;
 public class TeachUnit {
 	
 	private int TeachUnit_ID;
-	private int TeachUnit_Name;
+	private String TeachUnit_Name;
 	
-	public TeachUnit(int TeachUnit_ID,int TeachUnit_Name)
+	public TeachUnit(int TeachUnit_ID,String TeachUnit_Name)
 	{
 		setTeachUnit_ID(TeachUnit_ID);
 		setTeachUnit_Name(TeachUnit_Name);
@@ -17,10 +17,10 @@ public class TeachUnit {
 	public void setTeachUnit_ID(int teachUnit_ID) {
 		TeachUnit_ID = teachUnit_ID;
 	}
-	public int getTeachUnit_Name() {
+	public String getTeachUnit_Name() {
 		return TeachUnit_Name;
 	}
-	public void setTeachUnit_Name(int teachUnit_Name) {
+	public void setTeachUnit_Name(String teachUnit_Name) {
 		TeachUnit_Name = teachUnit_Name;
 	}
 

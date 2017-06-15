@@ -13,9 +13,9 @@ public class OurSQL {
 	public static int update = 4;
 	//=========================================
 	public OurSQL(String part1,String part2,String part3,int qtype){
-		setPart1(part1);
-		setPart2(part2);
-		setPart3(part3);
+		setPart1(part1.replaceAll("\\s+", ""));
+		setPart2(part2.replaceAll("\\s+", ""));
+		setPart3(part3.replaceAll("\\s+", ""));
 		setQtype(qtype);
 	}
 	public String getPart1() {

@@ -3,15 +3,15 @@ package Entities;
 public class AccessProfiles {
 
 	private int Access;
-	/*Access Profile Guide
-	 * 1:VIEWER:Parent,School administrator
-	 * 2:USER:Student,Teacher
-	 * 3:ADMIN:System administrator
-	 * DEFAULT: Viewer
-	 * */
-	public AccessProfiles(){
-		setAccess(1);//DEFAULT CONSTRUCTOR
-	}
+	
+	public static int student=0;
+	public static int teacher=1;
+	public static int schoolAdmin=2;
+	public static int systemAdmin=3;
+	public static int secretry=4;
+	public static int parent=5;
+	
+	
 	public AccessProfiles(int Acc){
 		setAccess(Acc);
 	}

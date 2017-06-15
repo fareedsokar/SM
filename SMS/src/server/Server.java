@@ -1,8 +1,13 @@
 package server;
+import OurMessage.Message;
+import OurMessage.Response;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
+import Entities.AccessProfiles;
+import Entities.User;
 import OurMessage.Message;
 import ocsf.server.*;
 public class Server extends AbstractServer {
@@ -101,6 +106,43 @@ public class Server extends AbstractServer {
 				  }
 				  //pstmt= conn.prepareStatement(((Message)msg).GetQuery());
 				  pstmt.executeUpdate();
+				  break;
+			  case 5:
+				  serv.display("Checking user");
+				  rs = stmt.executeQuery(((Message)msg).GetQuery());
+				  if(rs==null)
+				  {
+	  					try {
+							client.sendToClient(false);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}//not exist
+				  }
+				  else 
+				  {
+					  User us=new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getInt(5),new AccessProfiles(rs.getInt(6)));
+					  try {
+	  						client.sendToClient(us);
+	  					} catch (IOException e) {
+	  					// TODO Auto-generated catch block
+	  					e.printStackTrace();
+	  					}
+				  }
+				  break;
+			  case 100:
+				  	Response r=new Response(Response.integer);
+				  	serv.display("Read Student ids Request.");
+	  				rs = stmt.executeQuery(((Message)msg).GetQuery());
+	  				while(rs.next()){
+	  					r.getLs().add(rs.getInt(1));
+	  				}
+	  				try {
+	  					client.sendToClient(r);
+	  				} catch (IOException e) {
+	  					// TODO Auto-generated catch block
+	  					e.printStackTrace();
+	  				}
 				  break;
 			  }
 		  } catch (SQLException e) 

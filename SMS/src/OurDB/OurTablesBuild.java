@@ -1,23 +1,26 @@
 package OurDB;
 
 import java.util.ArrayList;
+//import java.util.Arrays;
+import java.util.Arrays;
 
 public class OurTablesBuild {
 
-	OurTable sql=new OurTable();
+	private OurTable sql=new OurTable();
+	
 	public OurTablesBuild()
 	{
 		//Building a record of our tables
-		ArrayList<tableColumn> arr=new ArrayList<tableColumn>();
-		arr.add(new tableColumn("id","Integer"));
-		arr.add(new tableColumn("Name","String"));
-		arr.add(new tableColumn("Password","String"));
-		arr.add(new tableColumn("Email","String"));
-		arr.add(new tableColumn("Status","Integer"));
-		arr.add(new tableColumn("Access","Integer"));
-		sql.setIndex(0, "User", arr);
+		String nArr[]={"id","name","password","email","status","access"};
+		ArrayList<String> arrnames=new ArrayList<String>(Arrays.asList(nArr));
+		String tArr[]={"Integer","String","String","String","Integer","Integer"};
+		ArrayList<String> arrtypes=new ArrayList<String>(Arrays.asList(tArr));
+		sql.setIndex(0, "User", arrnames,arrtypes);
 		//===============================
 		
 	}
+	
+	public OurTable getOurTables(){return sql;}
+	
 	
 }
