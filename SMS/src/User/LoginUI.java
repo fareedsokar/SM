@@ -1,4 +1,4 @@
-package UserGui;
+package User;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
