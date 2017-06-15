@@ -7,6 +7,7 @@ public class Response {
 	private ArrayList<Object> ls;//=new ArrayList<Object>();
 	private int RType;
 	public static int integer=0;
+	public static int string=1;
 	public Response(int rtype){
 		//setLs(test);
 		ls=new ArrayList<Object>();

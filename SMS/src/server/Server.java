@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import Entities.AccessProfiles;
+import Entities.TeachUnit;
 import Entities.User;
 import OurMessage.Message;
 import ocsf.server.*;
@@ -142,6 +143,31 @@ public class Server extends AbstractServer {
 	  				} catch (IOException e) {
 	  					// TODO Auto-generated catch block
 	  					e.printStackTrace();
+	  				}
+				  break;
+			  case 200:
+				    Response TU=new Response(Response.string);
+				  	serv.display("Read Teaching units (id & name)");
+	  				rs = stmt.executeQuery(((Message)msg).GetQuery());
+	  			    if(rs.wasNull())
+					{
+		  					try {
+								client.sendToClient(false);
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}//not exist
+					}
+	  				else {
+	  					while(rs.next()){
+	  						TU.getLs().add(rs.getInt(1) + " - " + rs.getString(2));
+	  					}
+	  					try {
+	  						client.sendToClient(TU);
+	  					} catch (IOException e) {
+	  						// TODO Auto-generated catch block
+	  						e.printStackTrace();
+	  					}
 	  				}
 				  break;
 			  }

@@ -2,6 +2,7 @@ package MainPage;
 import User.LoginController;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import sysAdmin.TeachunitController;
 
 import java.util.Vector;
 
@@ -19,7 +20,7 @@ public class Test extends Application {
 		//Vector<Student> students=new Vector<Student>();
 		   
 								  		
-		LoginController aFrame = new LoginController(); // create LoginFram
+		TeachunitController aFrame = new TeachunitController(); // create LoginFram
 				  
 		aFrame.start(arg0);
 	}

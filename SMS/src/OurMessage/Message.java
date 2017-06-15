@@ -19,6 +19,7 @@ public class Message implements java.io.Serializable {
 	public static int update = 4;
 	public static int getuser=5;
 	public static int secretaryStudents = 100;
+	public static int GetTeachunits = 200;
 	
 	public Message (String Q,int QT)
 	{
