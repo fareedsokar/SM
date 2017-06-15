@@ -1,0 +1,75 @@
+package Student;
+
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import ocsf.client.AbstractClient;
+import Entities.*;
+import java.awt.TextField;
+
+public class ViewResponseController extends AbstractClient implements Initializable{
+  private TextField reportanswer;
+//	private TextField successmessage="Your Answers has b";
+	
+public void GetReportAnswer(Request r)
+  {
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Response Dialog ");
+		alert.setHeaderText("Look, Are you sure you wanna see the answer?");
+	        
+		if (r.isAccepted()){
+			System.out.print("Your message has been accepted ");
+		}
+		else 
+			
+			System.out.print("Your message has not been accepted ");
+
+  }
+	
+public void start(Stage primaryStage) throws Exception {	
+	Parent root = FXMLLoader.load(getClass().getResource("/Student/ViewResponseGUI.fxml"));
+			
+	Scene scene = new Scene(root);
+	scene.getStylesheets().add(getClass().getResource("/Student/ViewResponseController.css").toExternalForm());
+	primaryStage.setTitle("Response manegment");
+	primaryStage.setScene(scene);
+	primaryStage.show();		
+}  
+@Override
+public void initialize(URL arg0, ResourceBundle arg1) {
+	Date d=new Date(17,5,123); 
+	Request r=new Request(123,125,"deletingmyself","i hate u",d,false); 
+     r.setAccepted(true);
+	GetReportAnswer(r);
+	// TODO Auto-generated method stub 
+}
+
+@Override
+protected void handleMessageFromServer(Object msg) {
+	// TODO Auto-generated method stub
+	if(msg instanceof Request){ (Request)((Request) msg).getMessage_ID()}
+	else{this.reportanswer.show();}
+}
+
+
+}

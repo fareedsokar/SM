@@ -1,0 +1,27 @@
+package Student;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+import java.util.Vector;
+
+import Entities.Date;
+import Entities.Request;
+public class testsally extends Application
+{
+	Request r; 
+	public static void main( String args[] ) throws Exception
+	   { 
+     launch(args);		
+	  } // end main
+
+	@Override
+	public void start(Stage arg0) throws Exception {
+		Date d=new Date(17,5,123); 
+		 this.r=new Request(123,125,"deletingmyself","i hate u",d,false); 
+         r.setAccepted(true);
+		ViewResponseController a=new ViewResponseController(); 
+		a.start(arg0);
+	}
+
+}

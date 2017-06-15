@@ -4,4 +4,10 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="OurSQL.ColumnSQL"/>
+<fullyQualifiedTypeName name="Entities.Student"/>
+<fullyQualifiedTypeName name="java.awt.TextField"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Entities.Request"/>
+<fullyQualifiedTypeName name="ocsf.client.AbstractClient"/>
+<fullyQualifiedTypeName name="java.util.Vector"/>
 </qualifiedTypeNameHistroy>

@@ -8,6 +8,7 @@ public class Messages {
 	private String Message_Context;
 	private Date Message_date;
 	private boolean Status;//read or unread!
+	//private static int count=0; // number of messages per student  
 	public Messages(int Message_ID, int User_ID, String Message_Subject, String Message_Context, Date Message_date, boolean Status)
 	{
 		setMessage_ID(Message_ID);
@@ -16,6 +17,7 @@ public class Messages {
 		setMessage_Context(Message_Context);
 		setMessage_date(Message_date);
 		setStatus(Status);
+	//	count++; 
 	}
 	public int getMessage_ID() {
 		return Message_ID;

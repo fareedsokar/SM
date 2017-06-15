@@ -1,0 +1,74 @@
+package Student;
+
+
+	package sallytestresponse;
+	import java.net.URL;
+	import client.AbstractClient; 
+	import java.util.ArrayList;
+	import java.util.ResourceBundle;
+
+	import ocsf.client.*;
+	import javafx.collections.FXCollections;
+	import javafx.collections.ObservableList;
+	import javafx.event.ActionEvent;
+	import javafx.fxml.FXML;
+	import javafx.fxml.FXMLLoader;
+	import javafx.fxml.Initializable;
+	import javafx.scene.Node;
+	import javafx.scene.Scene;
+	import javafx.scene.control.Button;
+	import javafx.scene.control.ComboBox;
+	import javafx.scene.control.Label;
+	import javafx.scene.control.TextField;
+	import javafx.scene.layout.Pane;
+	import javafx.stage.Stage;
+	import javax.swing.*;
+	import OurMessage.Message;
+	public class Viewanswer extends AbstractClient implements Initializable{
+
+		private TextField txtsubject; 
+		private TextField txtanswer;
+		private Button btnexit; 
+		
+		/*
+		public void getexitbutton(ActionEvent event)throw Exception {
+			((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
+			Stage primaryStage = new Stage();
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = loader.load(getClass().getResource("/gui/AcademicFrame.fxml").openStream());
+			
+			AcademicFrameController academicFrameController = loader.getController();
+			academicFrameController.loadStudent(this.s);
+			Scene scene = new Scene(root);			
+			scene.getStylesheets().add(getClass().getResource("/gui/AcademicFrame.css").toExternalForm());
+			primaryStage.setScene(scene);		
+			primaryStage.show();
+		}*/
+		public void loadAnswer()
+		{
+			Message msg=new Message("SELECT message_subject FROM messages WHERE message_id=",Message.select);
+		}
+		
+		@Override/*
+		protected void handleMessageFromServer(Object msg)
+		{
+	            if(msg instanceof Messages)
+	            {
+	            	txtsubject.setText(((Messages)msg).getMessage_Subject());
+	            	
+	            }
+	            else 
+	            {
+	            	
+	            }
+		}
+		@Override*/
+		public void initialize(URL location, ResourceBundle resources) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		
+
+	
+}
