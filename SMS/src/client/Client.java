@@ -38,6 +38,7 @@ public class Client extends AbstractClient{
 	
 	public void handleMessageFromServer(Object msg) 
 	{
+		
 		clientUI.displayFromServer((String)msg);
 	}
 	
@@ -54,7 +55,8 @@ public class Client extends AbstractClient{
 	  public void handleMessageFromClientUI(Message msg) throws IOException
 	  {
 	    try
-	    {
+	    { 
+	    	
 	    	sendToServer(msg);
 	    }
 	    catch(IOException e)
