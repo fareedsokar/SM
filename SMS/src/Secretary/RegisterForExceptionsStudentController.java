@@ -62,6 +62,7 @@ public class RegisterForExceptionsStudentController extends AbstractClient imple
 		// TODO Auto-generated method stub
 		setStudentComboBox();
 		
+		
 	}
 	public void start(Stage primaryStage) throws Exception {	
 		Parent root = FXMLLoader.load(getClass().getResource("/Secretary/RegisterForExceptionsStudentGUI.fxml"));
@@ -72,7 +73,7 @@ public class RegisterForExceptionsStudentController extends AbstractClient imple
 		primaryStage.show();		
 	}
 	public void registerStudent(){
-		
+		//Left
 	}
 
 }

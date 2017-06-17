@@ -17,10 +17,11 @@ public class Message implements java.io.Serializable {
 	public static int select = 2; 
 	public static int display= 3;
 	public static int update = 4;
-	public static int getuser=5;
-	public static int secretaryStudents = 100;
-	public static int GetTeachunits = 200;
-	
+	public static int getuser=5;//5-99 Ruba
+	public static int secretaryStudents = 100;//100-199 Fareed
+	public static int GetTeachunits = 200;//200-299 Muhamad
+											//300-399 Sally
+											//400-499 Abed
 	public Message (String Q,int QT)
 	{
 		 SetQuery(Q);
