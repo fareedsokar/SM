@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="370.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="57.0" prefHeight="277.0" prefWidth="360.0">
+         <children>
+            <Button layoutY="78.0" mnemonicParsing="false" text="View report" />
+            <ComboBox fx:id="comboreportlist" layoutX="-13.0" layoutY="23.0" prefWidth="150.0" />
+            <TextField fx:id="txtreport" layoutX="-13.0" layoutY="116.0" prefHeight="140.0" prefWidth="339.0" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblreport" layoutX="25.0" layoutY="31.0" text="Personal Report" />
+      <Button fx:id="btncancel" layoutX="42.0" layoutY="334.0" mnemonicParsing="false" text="Cancel" />
+   </children>
+</AnchorPane>

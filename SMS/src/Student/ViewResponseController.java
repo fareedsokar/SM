@@ -49,90 +49,11 @@ public class ViewResponseController  extends  AbstractClient implements Initiali
 	
 		return msg; 
 	}
-	public Object Getsize()
+	public Object Getsize() // change the query to a private query in Message and add case to the server 
 	{
-		Message msg=new Message("Count(Select * FROM message ",Message.select); 
+		Message msg=new Message("Count(Select * )FROM messages ",Message.select); 
 		return msg;
 	}
-	/*
-	 public void handleMessageFromClientUI(Message msg) throws IOException
-	  {
-	    try
-	    { 
-	    	
-	    	sendToServer(msg);
-	    }
-	    catch(IOException e)
-	    {
-	      ClientGUI.setNotification("Could not send message to server.");
-	      throw e;
-	     // quit();
-	    }
-	  }*/
-	/*public void ViewResponse(ActionEvent event)throws Exception
-	{
-		int id=0;
-		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
-		Stage primaryStage = new Stage();
-		FXMLLoader loader = new FXMLLoader();
-		Pane root = loader.load(getClass().getResource("/Student/Viewanswer.fxml").openStream());
-		Scene scene = new Scene(root);	
-		
-         Viewanswer reportanswer = loader.getController();
-		
-		id = getReportById((String )comboreport.getValue());
-		
-		reportanswer.loadReport(id);
-		scene.getStylesheets().add(getClass().getResource("/Student/Viewanswer.css").toExternalForm());
-		
-		primaryStage.setScene(scene);		
-		primaryStage.show();
-	}
-	public int getReportById(Object msg)
-	{
-		return ((Request)msg).getMessage_Context();
-		
-	}
-	public void setvaluescombo(Object msgsize,Object msg2)
-	{
-		ArrayList<String> al = new ArrayList<String>();
-		/*for(int i=0;i<(int)msgsize;i++)
-		{
-			s1 = Test.students.get(i);
-			al.add(s1.getPName() + " " + s1.getLName());
-		    //System.out.print(al.get(i));
-		    //System.out.print(" ");
-		}
-		list = FXCollections.observableArrayList(al);
-		//CombStdlist.setItems(list);
-		cmbStdlist.setItems(list);
-	}
-	 
-	/*
-	public void GetViewResponse(ActionEvent event) throws Exception
-	{
-		
-		int id=0;
-		((Node)event.getSource()).getScene().getWindow().hide(); //hiding primary window
-		Stage primaryStage = new Stage();
-		FXMLLoader loader = new FXMLLoader();
-		Pane root = loader.load(getClass().getResource("/sallytestresponse/ViewAnswersGui.fxml").openStream());
-		
-		Viewanswer view1 = loader.getController();
-		
-		//id = getStudentByname((String )cmbStdlist.getValue());
-		
-	//	Viewanswer.loadAnswer();
-		
-		Scene scene = new Scene(root);			
-		scene.getStylesheets().add(getClass().getResource("/sallytestresponse/ViewAnswers.css").toExternalForm());
-		
-		primaryStage.setScene(scene);		
-		primaryStage.show();
-
-	}
-	
-	*/
 	
 	public void ViewResponse(ActionEvent event) throws Exception// when view response pressed
 	{  
@@ -155,14 +76,10 @@ public class ViewResponseController  extends  AbstractClient implements Initiali
 	{
 		
 		ArrayList<String> al = new ArrayList<String>();
-		ArrayList<Request> s1=(ArrayList<Request>)msg; 
-		for(int i=0;i<this.count;i++)
-		{
-			al.add(s1.get(i).getMessage_Subject());
-		}
+		al=((ArrayList<String>) msg);
 		list = FXCollections.observableArrayList(al);
-		//CombStdlist.setItems(list);
 		comboreport.setItems(list);
+		comboreport.setValue(list.get(0).toString());
 	}
 
 	protected void handleMessageFromServer(Object msg) {
@@ -170,44 +87,28 @@ public class ViewResponseController  extends  AbstractClient implements Initiali
 	   if(msg instanceof Request)
 	   {	FXMLLoader loader = new FXMLLoader();
 		   SetComboValues(msg); 
-		   Viewanswer reportans = loader.getController();
-			
 			//id = GetStudentIdBySub((String )comboreport.getValue());
-			
-			reportans.LoadReport(this.userid,msg);
-			
-		   
 	   }
 	   else // msg is a number 
+		   if(msg instanceof Integer)
 	   {
 		   this.count=(int)msg; 
 	   }
 		
 	}
-	/*public int GetStudentIdBySub(String str,Object msg)
-	{
-		int id=0; 
-		ArrayList<Request> s1=(ArrayList<Request>)msg; 
-		for(int i=0;i<this.count;i++)
-		{
-			if(str.equals((s1.get(i).getMessage_Subject())))
-			{
-				id=s1.get(i).getUser_ID();
-			}
-		}
-		return id; // check if its 0 
-	}*/
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 {
-		 Message msg2=new Message("Count(Select * )from request",Message.select);
+		 Message msg2=new Message("Count(Select * )from request",Message.Message_count);
 		    try {
 				sendToServer(msg2);
+				comboreport.
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
-		Message msg=new Message("Select subject_id from request where user_id=",Message.select);
+		Message msg=new Message("Select subject_id from request where user_id=",Message.Message_Subject);
 try {
 	sendToServer(msg);
 } catch (IOException e) {

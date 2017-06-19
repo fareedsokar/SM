@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="14.0" prefHeight="294.0" prefWidth="362.0">
+         <children>
+            <ComboBox fx:id="combocoursename" layoutY="75.0" prefHeight="26.0" prefWidth="181.0" />
+            <Label fx:id="lblmaterials" layoutY="37.0" text="Learning Materials :" />
+            <Button fx:id="btnok" layoutX="154.0" layoutY="231.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Ok" />
+            <ComboBox fx:id="combomaterial" layoutY="121.0" prefHeight="26.0" prefWidth="181.0" />
+            <Button fx:id="btncancel" layoutX="14.0" layoutY="231.0" mnemonicParsing="false" text="Cancel" />
+            <RadioButton fx:id="radioview" layoutX="17.0" layoutY="180.0" mnemonicParsing="false" text="View" />
+            <RadioButton fx:id="radiodownload" layoutX="121.0" layoutY="180.0" mnemonicParsing="false" text="Download" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

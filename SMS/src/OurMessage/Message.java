@@ -19,7 +19,8 @@ public class Message implements java.io.Serializable {
 	public static int update = 4;
 	public static int getuser=5;
 	public static int secretaryStudents = 100;
-	
+	public static int Message_Subject=300; 
+	public static int Message_count=301;
 	public Message (String Q,int QT)
 	{
 		 SetQuery(Q);

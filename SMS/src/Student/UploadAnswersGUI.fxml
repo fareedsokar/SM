@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="-29.0" prefHeight="299.0" prefWidth="447.0">
+         <children>
+            <Label fx:id="lbluplloadans" layoutX="42.0" layoutY="23.0" text="Upload Answers :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="combocoursename" layoutX="122.0" layoutY="78.0" prefWidth="150.0" />
+            <Label fx:id="lblcourse" layoutX="42.0" layoutY="78.0" text="Course :" />
+            <Label fx:id="lblfilename" layoutX="42.0" layoutY="141.0" text="File :" />
+            <Button fx:id="btnsend" layoutX="198.0" layoutY="234.0" mnemonicParsing="false" text="Send" />
+            <TextField fx:id="txtfilename" layoutX="124.0" layoutY="137.0" prefHeight="27.0" prefWidth="192.0" />
+            <Button fx:id="btncancel" layoutX="59.0" layoutY="234.0" mnemonicParsing="false" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

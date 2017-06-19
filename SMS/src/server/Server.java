@@ -144,7 +144,35 @@ public class Server extends AbstractServer {
 	  					e.printStackTrace();
 	  				}
 				  break;
-			  }
+			  case 300://Sally select Message_Subject for request 
+				  ArrayList<String> al = new ArrayList<String>();
+				  serv.display("Read Students Message_Subject.");
+	  				rs = stmt.executeQuery(((Message)msg).GetQuery());
+	  				while(rs.next()){
+	  				al.add(rs.getString(1)); 
+	  				}
+	  				try {
+	  					client.sendToClient(al);
+	  				} catch (IOException e) {
+	  					// TODO Auto-generated catch block
+	  					e.printStackTrace();
+	  				}
+				  break;
+			  case 301:  // counting messages per student 
+				  int id=0; 
+				  serv.display("Count message requests per student");
+				  rs=stmt.executeQuery(((Message)msg).GetQuery()); 
+				  while(rs.next()){
+		  			id++;
+		  				}
+				  try {
+	  					client.sendToClient(id);
+	  				} catch (IOException e) {
+	  					// TODO Auto-generated catch block
+	  					e.printStackTrace();
+	  				}
+				  
+			  }  
 		  } catch (SQLException e) 
 		  {
 			  this.sendToAllClients("Faild!");
