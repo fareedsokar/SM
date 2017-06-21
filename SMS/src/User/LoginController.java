@@ -28,7 +28,7 @@ import ocsf.client.AbstractClient;
 
 public class LoginController extends AbstractClient{// implements Initializable{
 
-
+	private LoginUI lgUi;
 	public void start(Stage primaryStage) throws Exception {	
 		Parent root = FXMLLoader.load(getClass().getResource("/User/LoginFX.fxml"));
 		Scene scene = new Scene(root);
@@ -40,9 +40,9 @@ public class LoginController extends AbstractClient{// implements Initializable{
 		primaryStage.show();		
 	}
 	
-	public void getIdFromDB(String id)
+	public void getFromDB(String id,String password)
 	{
-		Message Query= new Message("SELECT * FROM user WHERE id="+id,Message.getuser);
+		Message Query= new Message("SELECT * FROM user WHERE id="+id+" AND password="+password,Message.getuser);
 		try {
 			sendToServer(Query);
 		} catch (IOException e) {
@@ -68,35 +68,40 @@ public class LoginController extends AbstractClient{// implements Initializable{
 		}
 		else{
 			if(msg instanceof User){
+				
 				switch(((User)msg).getAccess().getAccess()){
 				
 				case 0://Student 
+					//Student std=new Student();
+
 					break;
 
 				case 1://teacher
-					break;
+					//Student Teacher=new Teacher();
 
+					break;
+					
 				case 2://schoolAdmin
+					
 					break;
 
 				case 3://systemAdmin
-					
 					break;
 
 				case 4://secretry
 					break;
 
 				case 5://parent
-					
-				break;
+					break;
 				
 				
 				
 				
-				}
+				}		
+				lgUi.setflag(false);
+				lgUi.dispose();
 				
-				
-				
+
 				
 				
 			}

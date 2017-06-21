@@ -11,12 +11,22 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
+import Entities.User;
+import java.awt.Window.Type;
+
 public class LoginUI extends JFrame  {
+	
 	private JTextField textField;
 	private JPasswordField passwordField;
+//	private User usr;
+	private LoginController lgn;
+	private LoginUI lg;
 	
 	
+	private boolean flag =true;
 	public LoginUI() {
+		setType(Type.UTILITY);
+		setTitle("Login");
 		
 		JPanel panel = new JPanel();
 		getContentPane().add(panel, BorderLayout.CENTER);
@@ -42,22 +52,48 @@ public class LoginUI extends JFrame  {
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				
-				
-				
+								
+				String Id=textField.getText();
+				String password=passwordField.getPassword().toString();
+				lgn.getFromDB(Id,password);
+				while(flag);
+
 			}
 		});
 		btnNewButton.setBounds(38, 209, 89, 23);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Register");
+		JButton btnNewButton_1 = new JButton("SignUp");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				lg.dispose();
+			//	LoginUI L = new LoginUI(); 
+				
+				RegisterUI rg = new RegisterUI();
+				rg.setVisible(true);
+				
+				
+			}
+		});
 		btnNewButton_1.setBounds(169, 209, 89, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Exit");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			lg.dispose();//exit the window//
+				
+				
+			}
+		});
 		btnNewButton_2.setBounds(305, 209, 89, 23);
 		panel.add(btnNewButton_2);
+	}
+	
+	public boolean setflag(boolean flag)
+	{
+		return this.flag=flag;
 	}
 }
