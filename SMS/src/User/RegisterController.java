@@ -12,12 +12,10 @@ public class RegisterController  extends AbstractClient {
 	
 	
 	
-	public boolean checkpass(String pass,String Rpass)
+	public static boolean checkpass(String pass,String Rpass)
 	{
-		if(pass.equals(Rpass))
-			return true;
-		
-		return false;
+		return pass.equals(Rpass);
+	
 		
 	}
 
